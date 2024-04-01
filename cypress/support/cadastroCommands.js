@@ -101,8 +101,6 @@ Cypress.Commands.add('cadastroValidoCamposObrigatorios', () =>
         .and('have.attr', 'type', 'password')
         .type(ConfirmPassword)
 
-    cy.wait(5000)
-
     cy.get(loc.tela_Cadastro.botaoCadastrar)
         .should('be.visible')
         .and('have.css', 'background-color', 'rgb(74, 178, 241)')
@@ -114,4 +112,72 @@ Cypress.Commands.add('cadastroValidoCamposObrigatorios', () =>
         .should('be.visible')
         .and('have.css', 'color', 'rgb(76, 177, 124)')
         .and('contain', 'Your registration completed')
+})
+
+Cypress.Commands.add('cadastroInvalidoCamposObrigatorios', () =>
+{
+    cy.get(loc.tela_Cadastro.botaoCadastrar)
+        .click()
+
+    cy.get(loc.tela_Cadastro.alertaPrimeiroNome)
+        .should('be.visible')
+        .and('have.css', 'color', 'rgb(228, 67, 75)')
+        .and('contain', 'First name is required')
+
+    cy.get(loc.tela_Cadastro.primeiroNome)
+        .should('be.visible')
+        .type(FirstName)
+
+    cy.get(loc.tela_Cadastro.alertaPrimeiroNome)
+        .should('not.be.exist')
+
+    cy.get(loc.tela_Cadastro.alertaUltimoNome)
+        .should('be.visible')
+        .and('have.css', 'color', 'rgb(228, 67, 75)')
+        .and('contain', 'Last name is required')
+
+    cy.get(loc.tela_Cadastro.ultimoNome)
+        .should('be.visible')
+        .type(LastName)
+
+    cy.get(loc.tela_Cadastro.alertaUltimoNome)
+        .should('not.be.exist')
+
+    cy.get(loc.tela_Cadastro.alertaEmail)
+        .should('be.visible')
+        .and('have.css', 'color', 'rgb(228, 67, 75)')
+        .and('contain', 'Email is required')
+
+    cy.get(loc.tela_Cadastro.email)
+        .should('be.visible')
+        .type(Email)
+
+    cy.get(loc.tela_Cadastro.alertaEmail)
+        .should('not.be.exist')
+
+    cy.get(loc.tela_Cadastro.alertaSenha)
+        .should('be.visible')
+        .and('have.css', 'color', 'rgb(228, 67, 75)')
+        .and('contain', 'Password is required')
+
+    cy.get(loc.tela_Cadastro.senha)
+        .should('be.visible')
+        .and('have.attr', 'type', 'password')
+        .type(Password)
+
+    cy.get(loc.tela_Cadastro.alertaSenha)
+        .should('not.be.exist')
+
+    cy.get(loc.tela_Cadastro.alertaConfirmaSenha)
+        .should('be.visible')
+        .and('have.css', 'color', 'rgb(228, 67, 75)')
+        .and('contain', 'Password is required')
+
+    cy.get(loc.tela_Cadastro.confirmaSenha)
+        .should('be.visible')
+        .and('have.attr', 'type', 'password')
+        .type(ConfirmPassword)
+
+    cy.get(loc.tela_Cadastro.alertaConfirmaSenha)
+        .should('not.be.exist')
 })

@@ -13,13 +13,17 @@ const locators= {
         ultimoNome: '#LastName',
         dataNascimento: '.date-picker-wrapper > select',
         email: '#Email',
-
         noticiasCheck: '.inputs > input[type="checkbox"]',
         senha: '#Password',
         confirmaSenha: '#ConfirmPassword',
         botaoCadastrar: '#register-button',
-
-        confirmaRegistro: '.result'
+        confirmaRegistro: '.result',
+        //Alertas
+        alertaPrimeiroNome: '#FirstName-error',
+        alertaUltimoNome: '#LastName-error',
+        alertaEmail: '#Email-error',
+        alertaSenha: '#Password-error',
+        alertaConfirmaSenha: '#ConfirmPassword-error'
     }
 };
 

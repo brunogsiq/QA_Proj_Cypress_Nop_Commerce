@@ -49,7 +49,7 @@ context.only(`${++Context} - Plataforma Web - Tela de Home.`, () =>
         });
     });
 
-    describe.only(`Cenário ${++Describe} - Validação de Testes Funcionais.`, () =>
+    describe(`Cenário ${++Describe} - Validação de Testes Funcionais.`, () =>
     {
         beforeEach(() =>
         {
@@ -59,6 +59,11 @@ context.only(`${++Context} - Plataforma Web - Tela de Home.`, () =>
         it(`Teste ${Teste}.${++Complemento} - Validar Cadastro Valido - Somente Campos Obrigatórios`, () =>
         {
             cy.cadastroValidoCamposObrigatorios()
+        });
+
+        it.only(`Teste ${Teste}.${++Complemento} - Validar Cadastro Invalido - Somente Campos Obrigatórios`, () =>
+        {
+            cy.cadastroInvalidoCamposObrigatorios()
         });
     });
 });
