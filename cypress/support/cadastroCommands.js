@@ -150,6 +150,30 @@ Cypress.Commands.add('cadastroInvalidoCamposObrigatorios', () =>
 
     cy.get(loc.tela_Cadastro.email)
         .should('be.visible')
+        .type('testeDeAlerta')
+
+    cy.get(loc.tela_Cadastro.alertaEmail)
+        .should('be.visible')
+        .and('have.css', 'color', 'rgb(228, 67, 75)')
+        .and('contain', 'Wrong email')
+
+    cy.get(loc.tela_Cadastro.email)
+        .clear()
+
+    cy.get(loc.tela_Cadastro.email)
+        .should('be.visible')
+        .type('testeDeAlerta@')
+
+    cy.get(loc.tela_Cadastro.alertaEmail)
+        .should('be.visible')
+        .and('have.css', 'color', 'rgb(228, 67, 75)')
+        .and('contain', 'Wrong email')
+
+    cy.get(loc.tela_Cadastro.email)
+        .clear()
+
+    cy.get(loc.tela_Cadastro.email)
+        .should('be.visible')
         .type(Email)
 
     cy.get(loc.tela_Cadastro.alertaEmail)
@@ -163,6 +187,34 @@ Cypress.Commands.add('cadastroInvalidoCamposObrigatorios', () =>
     cy.get(loc.tela_Cadastro.senha)
         .should('be.visible')
         .and('have.attr', 'type', 'password')
+        .type('1')
+
+    cy.get(loc.tela_Cadastro.alertaSenha)
+        .should('be.visible')
+        .and('have.css', 'color', 'rgb(228, 67, 75)')
+        .and('contain', 'Password must meet the following rules: must have at least 6 characters')
+
+    cy.get(loc.tela_Cadastro.senha)
+        .clear()
+
+    cy.get(loc.tela_Cadastro.senha)
+        .should('be.visible')
+        .and('have.attr', 'type', 'password')
+        .type('12345')
+        cy.get(loc.tela_Cadastro.confirmaSenha)
+            .click()
+
+    cy.get(loc.tela_Cadastro.alertaSenha)
+        .should('be.visible')
+        .and('have.css', 'color', 'rgb(228, 67, 75)')
+        .and('contain', 'Password must meet the following rules: must have at least 6 characters')
+
+    cy.get(loc.tela_Cadastro.senha)
+        .clear()
+
+    cy.get(loc.tela_Cadastro.senha)
+        .should('be.visible')
+        .and('have.attr', 'type', 'password')
         .type(Password)
 
     cy.get(loc.tela_Cadastro.alertaSenha)
@@ -172,6 +224,19 @@ Cypress.Commands.add('cadastroInvalidoCamposObrigatorios', () =>
         .should('be.visible')
         .and('have.css', 'color', 'rgb(228, 67, 75)')
         .and('contain', 'Password is required')
+
+    cy.get(loc.tela_Cadastro.confirmaSenha)
+        .should('be.visible')
+        .and('have.attr', 'type', 'password')
+        .type('12345')
+
+    cy.get(loc.tela_Cadastro.alertaConfirmaSenha)
+        .should('be.visible')
+        .and('have.css', 'color', 'rgb(228, 67, 75)')
+        .and('contain', 'The password and confirmation password do not match.')
+
+    cy.get(loc.tela_Cadastro.confirmaSenha)
+        .clear()
 
     cy.get(loc.tela_Cadastro.confirmaSenha)
         .should('be.visible')

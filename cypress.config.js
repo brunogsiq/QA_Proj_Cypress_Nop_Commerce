@@ -23,8 +23,8 @@ module.exports = defineConfig({
     //Aqui ficarão todos os meus testes:
     specPattern: [
        "cypress/e2e/01 - Tela Home.cy.js",
-       "cypress/e2e/02 - Tela Cadastro.cy.js"
-      // "cypress/e2e/0",
+       "cypress/e2e/02 - Tela Cadastro.cy.js",
+       "cypress/e2e/03 - Testes de BackEnd.cy.js"
     ],
     setupNodeEvents(on, config) {
       // implement node event listeners here

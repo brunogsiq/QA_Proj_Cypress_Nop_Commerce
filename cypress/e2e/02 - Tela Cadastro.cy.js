@@ -56,12 +56,12 @@ context.only(`${++Context} - Plataforma Web - Tela de Home.`, () =>
             cy.visitaCadastro()
         });
 
-        it(`Teste ${Teste}.${++Complemento} - Validar Cadastro Valido - Somente Campos Obrigatórios`, () =>
+        it(`Teste ${Teste}.${++Complemento} - Validar Cadastro Válido - Somente Campos Obrigatórios`, () =>
         {
             cy.cadastroValidoCamposObrigatorios()
         });
 
-        it.only(`Teste ${Teste}.${++Complemento} - Validar Cadastro Invalido - Somente Campos Obrigatórios`, () =>
+        it(`Teste ${Teste}.${++Complemento} - Validar Visão dos Aleras Para Cadastro Inválido - Somente Campos Obrigatórios`, () =>
         {
             cy.cadastroInvalidoCamposObrigatorios()
         });
