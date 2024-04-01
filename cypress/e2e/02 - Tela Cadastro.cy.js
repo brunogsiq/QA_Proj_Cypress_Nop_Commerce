@@ -1,7 +1,3 @@
-/*
-- [ ]  Validação que a data selecionada corresponde com o input desejado
-*/
-
 /// <reference types="cypress"/>
 
 var Context = 1;
