@@ -7,7 +7,7 @@ var Complemento = 0;
 
 const { faker } = require('@faker-js/faker');
 
-context.only(`${++Context} - Plataforma Web - Tela de Home.`, () =>
+context(`${++Context} - Plataforma Web - Tela de Home.`, () =>
 {
 
     describe(`Cenário ${++Describe} - Validação de Rotas de Acesso.`, () =>
