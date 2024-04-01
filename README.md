@@ -167,3 +167,11 @@
 
    Este texto fornece instruções claras sobre como instalar o Faker.js, exemplos de uso em diferentes ambientes e um link para a documentação oficial para mais detalhes.
 ```
+
+## Testes FrontEnd
+
+- Os testes backEnd foram realizados em: https://demo.nopcommerce.com/
+
+##Testes BackEnd
+
+- Os testes backEnd foram realizados em: https://serverest.dev/

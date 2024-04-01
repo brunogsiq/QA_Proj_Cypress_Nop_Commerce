@@ -23,7 +23,7 @@ const locators= {
         alertaUltimoNome: '#LastName-error',
         alertaEmail: '#Email-error',
         alertaSenha: '#Password-error',
-        alertaConfirmaSenha: '#ConfirmPassword-error'
+    alertaConfirmaSenha: '#ConfirmPassword-error'
     }
 };
 
