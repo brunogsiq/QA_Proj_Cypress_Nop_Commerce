@@ -7,7 +7,6 @@ var Complemento = 0;
 
 context(`${++Context} - Plataforma Web - Tela de Home.`, () =>
 {
-
     describe(`Cenário ${++Describe} - Validação de Rotas de Acesso.`, () =>
     {
         beforeEach(() =>
@@ -41,7 +40,6 @@ context(`${++Context} - Plataforma Web - Tela de Home.`, () =>
             cy.visit(Cypress.env("baseUrl"))
         });
 
-
         it(`Teste ${Teste}.${++Complemento} - Validar Componentes Visuais.`, () =>
         {
             //COMPREENDER QUAIS SERÃO OS COMPONENTES DESTA TELA
@@ -54,7 +52,6 @@ context(`${++Context} - Plataforma Web - Tela de Home.`, () =>
         {
             cy.visit(Cypress.env("baseUrl"))
         });
-
 
         it(`Teste ${Teste}.${++Complemento} - Validar Itens do Menu Superior.`, () =>
         {

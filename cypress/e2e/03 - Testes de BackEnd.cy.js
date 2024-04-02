@@ -52,7 +52,7 @@ context(`${++Context} - Teste de API - BackEnd - https://serverest.dev/`, () =>
             })
         });
 
-        it(`Teste ${Teste}.${++Complemento} - GET - Busca Usuário`, () => 
+        it(`Teste ${Teste}.${++Complemento} - GET - Busca Usuário`, () =>
         {
             cy.request({
                 method: 'POST',
@@ -77,7 +77,8 @@ context(`${++Context} - Teste de API - BackEnd - https://serverest.dev/`, () =>
            });
         });
 
-        it(`Teste ${Teste}.${++Complemento} - PUT - Atualiza Usuário`, () => {
+        it(`Teste ${Teste}.${++Complemento} - PUT - Atualiza Usuário`, () =>
+        {
             cy.request({
                 method: 'POST',
                 url: 'https://serverest.dev/login',
@@ -111,26 +112,27 @@ context(`${++Context} - Teste de API - BackEnd - https://serverest.dev/`, () =>
                     "password": NewPassword,
                     "administrador": "true"
                 }
-            }).then((atualizacaoResponse) => {
+            }).then((atualizacaoResponse) =>
+            {
                 expect(atualizacaoResponse.status).to.equal(200);
                 expect(atualizacaoResponse.body.message).to.equal('Registro alterado com sucesso');
 
-            cy.request({
-                method: 'GET',
-                url: `https://serverest.dev/usuarios/${usuarioId}`,
-                headers: {
-                    Authorization: `Bearer ${authToken}`
-                }
-            }).then((buscaResponse) => {
-                expect(buscaResponse.body.nome).to.equal(FullName);
-                expect(buscaResponse.body.email).to.equal(NewEmail);
-                expect(buscaResponse.body.password).to.equal(NewPassword);
-                expect(buscaResponse.body.administrador).to.equal('true');
-            });
+                cy.request({
+                    method: 'GET',
+                    url: `https://serverest.dev/usuarios/${usuarioId}`,
+                    headers: {
+                        Authorization: `Bearer ${authToken}`
+                    }
+                }).then((buscaResponse) => {
+                    expect(buscaResponse.body.nome).to.equal(FullName);
+                    expect(buscaResponse.body.email).to.equal(NewEmail);
+                    expect(buscaResponse.body.password).to.equal(NewPassword);
+                    expect(buscaResponse.body.administrador).to.equal('true');
+                });
+            })
         })
-    })
 
-        it(`Teste ${Teste}.${++Complemento} - DELETE - Remove Usuário`, () => 
+        it(`Teste ${Teste}.${++Complemento} - DELETE - Remove Usuário`, () =>
         {
             cy.request({
                 method: 'POST',
@@ -159,7 +161,8 @@ context(`${++Context} - Teste de API - BackEnd - https://serverest.dev/`, () =>
                     headers: {
                         Authorization: `Bearer ${authToken}`
                     }
-                }).then((deleteResponse) => {
+                }).then((deleteResponse) =>
+                {
                     expect(deleteResponse.status).to.equal(200);
                     expect(deleteResponse.body.message).to.equal('Registro excluído com sucesso');
         
@@ -170,7 +173,8 @@ context(`${++Context} - Teste de API - BackEnd - https://serverest.dev/`, () =>
                             Authorization: `Bearer ${authToken}`
                         },
                     failOnStatusCode: false
-                    }).then((getDeletedResponse) => {
+                    }).then((getDeletedResponse) =>
+                    {
                         expect(getDeletedResponse.status).to.equal(400);
                         expect(getDeletedResponse.body.message).to.equal('Usuário não encontrado');
                     });

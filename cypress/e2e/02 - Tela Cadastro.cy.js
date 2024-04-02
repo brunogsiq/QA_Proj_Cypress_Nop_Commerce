@@ -5,14 +5,10 @@ var Describe = 3;
 var Teste = 1;
 var Complemento = 0;
 
-const { faker } = require('@faker-js/faker');
-
 context(`${++Context} - Plataforma Web - Tela de Home.`, () =>
 {
-
     describe(`Cenário ${++Describe} - Validação de Rotas de Acesso.`, () =>
     {
-
         it(`Teste ${++Teste}.${++Complemento} - Validar Acesso a Tela Cadastro.`, () =>
         {
             cy.acessaCadastro()
