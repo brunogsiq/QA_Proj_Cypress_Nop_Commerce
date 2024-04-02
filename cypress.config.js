@@ -20,7 +20,6 @@ module.exports = defineConfig({
     defaultCommandTimeout: 9000,
     experimentalRunAllSpecs: true,
     hideXHRInCommandLog: true,
-    //Aqui ficarão todos os meus testes:
     specPattern: [
        "cypress/e2e/01 - Tela Home.cy.js",
        "cypress/e2e/02 - Tela Cadastro.cy.js",

@@ -160,7 +160,8 @@ context(`${++Context} - Teste de API - BackEnd - https://serverest.dev/`, () =>
                     url: `https://serverest.dev/usuarios/${usuarioId}`,
                     headers: {
                         Authorization: `Bearer ${authToken}`
-                    }
+                    },
+                failOnStatusCode: false
                 }).then((deleteResponse) =>
                 {
                     expect(deleteResponse.status).to.equal(200);
