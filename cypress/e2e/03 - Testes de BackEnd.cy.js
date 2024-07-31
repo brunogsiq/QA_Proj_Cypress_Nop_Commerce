@@ -18,7 +18,7 @@ context(`${++Context} - Teste de API - BackEnd - https://serverest.dev/`, () =>
     {
         let usuarioId;
         let authToken;
-        it(`Teste ${Teste}.${++Complemento} - POST - Cadastrar Usuário`, () =>
+        it(`Teste ${++Teste}.${++Complemento} - POST - Cadastrar Usuário`, () =>
         {
             cy.request({
                 method: 'POST',
